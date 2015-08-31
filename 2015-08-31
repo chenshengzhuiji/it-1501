@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8" />
+       <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css">
+        <script type="text/javascript" src="js/cordova.js"></script>
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
+        <script type="text/javascript">
+            $(function () {
+                document.addEventListener("deviceready", onReady, false);
+            })
+            function onReady(){
+                document.addEventListener("pause",onpause,false);
+                document.addEventListener("resume",onResume,false);
+                document.addEventListener("online",onLine,false);
+                document.addEventListener("offline",offLine,false);
+                document.addEventListener("backbutton",onBackButton,false);
+                document.addEventListener("menubutton",onMenuButton,false);
+                document.addEventListener("batterystatus",onBatterystatus,false);
+                document.addEventListener("batterycritical",onBatteryCritical,false);
+                document.addEventListener("batterylow",onBatterylow,false);
+            }
+            function onpause() {
+                alert("搴旂敤绋嬪簭缃簬鍚庡彴鈥︹��");
+            }
+            function onResume() {
+                alert("搴旂敤绋嬪簭缃簬鍓嶅彴鈥︹��");
+            }
+            function onLine() {
+                alert("缃戠粶杩炴帴姝ｅ父");
+            }
+            function offLine() {
+                alert("鏂綉浜嗏�︹��");
+            }
+            function onBackButton() {
+                alert("鍐嶇偣涓�娆￠��鍑�");
+            }
+            function onMenuButton() {
+                alert("杩欐槸鑿滃崟鎸夐挳");
+            }
+            function onBatterystatus(info) {
+                alert("Level:"+info.level+"isPlugged:"+info.isPlugged);
+            }
+            function onBatteryCritical(info) {
+                alert("Battery Level Critical"+info.level+"%\nRecharge soon!");
+            }
+            function onBatterylow(info) {
+                alert("Battery Level Low"+info.level+"%");
+            }
+        </script>
+    </head>
+    <body>
+		<div data-role="page">
+            <div data-role="header">
+                <h1>鏍囬</h1>
+            </div>
+            <div data-role="contert"></div>
+            <div data-role="footer">
+                <h1>搴曢儴</h1>
+            </div>
+        </div>
+        
+    </body>
+</html>
